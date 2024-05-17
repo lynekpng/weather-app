@@ -10,5 +10,5 @@ Show hourly weather forecast
 Provide a 5-day weather forecast
 Mobile-first design with responsive layout
 Demo : 
-You can see the app live : .
+You can see the app live : https://github.com/lynekpng/weather-app/deployments/github-pages.
 

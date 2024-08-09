@@ -12,4 +12,8 @@ Features :
   
 Demo : 
 You can see the app live : https://github.com/lynekpng/weather-app/deployments/github-pages.
+UI/UX inspirations :
+- https://www.figma.com/design/mW1MLEHTAQ2t4b6Z8iFx5q/Weather-App-(Community)?m=auto&t=ap3bqPZe7TGi6YJj-6
+- https://keepinguptodate.com/pages/2019/08/design-and-develop-web-app/
+
 

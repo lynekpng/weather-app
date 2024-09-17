@@ -210,3 +210,8 @@ body.dark-mode .img-unchecked {
   align-items: center;
   text-align: center;
 }
+/* styles.css or any relevant stylesheet */
+.weather-icon {
+  width: 100px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
+}

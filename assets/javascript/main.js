@@ -1,21 +1,31 @@
 import { fetchWeatherData } from './weatherModule.js';
 import { updateWeatherUI } from './uiModule.js';
-import { darkMode } from './darkMode.js';
+import { darkMode } from './dark-mode.js';
+import { loadWeatherIcons } from './weatherIconsLoader.js';
 
-
-document.addEventListener("DOMContentLoaded", () => {
+document.addEventListener("DOMContentLoaded", async () => {
+    await loadWeatherIcons() ;
     darkMode(); 
  
      
  });
-document.getElementById('search-button').addEventListener('click', () => {
+ 
+ document.getElementById('search-button').addEventListener('click', () => {
     const locationInput = document.getElementById('location-input').value;
     if (locationInput) {
         fetchWeatherData(locationInput).then(weatherData => {
-            updateWeatherUI(weatherData);
+            if (weatherData) {
+                updateWeatherUI(weatherData);
+            } else {
+                console.error('No weather data to display');
+            }
+        }).catch(error => {
+            console.error('Error fetching weather data:', error);
         });
     }
 });
+
+
 
 document.getElementById('location-input').addEventListener('keypress', (e) => {
     if (e.key === 'Enter') {

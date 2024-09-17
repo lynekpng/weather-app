@@ -1,6 +1,5 @@
-
+import { getWeatherIcon } from './weatherIcons.js'
 export function updateWeatherUI(weatherData) {
-    import {icons} from ./assets/icons.weather-icons ;
     function formatFullDate(date) {
         const options = {
             weekday: 'long', // "Monday"
@@ -10,6 +9,8 @@ export function updateWeatherUI(weatherData) {
         };
         return new Intl.DateTimeFormat('en-GB', options).format(date);
     }
+  
+  
     // A) Location and Date
     const date = new Date();
     const locationElement = document.querySelector('#location-and-date');
@@ -21,18 +22,21 @@ export function updateWeatherUI(weatherData) {
 
     // B) Current Temperature
     const currentTempElement = document.getElementById('current-temperature');
-    const currentWeather = weatherData.list[0]; // Access the first forecast entry
+    const currentWeather = weatherData.list[0]; 
+    const weatherCode = currentWeather.weather[0].id;
+    const weatherIcon = getWeatherIcon(weatherCode);
     currentTempElement.innerHTML = `
         ${Math.round(currentWeather.main.temp)}°C<br>
-        ${currentWeather.weather[0].description}
+        ${currentWeather.weather[0].description} <br>
+       <img src="${weatherIcon}" alt="${currentWeather.weather[0].description}" class="weather-icon">
     `;
 
     // C) Current Stats
     const currentStatsElement = document.getElementById('current-stats');
     currentStatsElement.innerHTML = `
-        High: ${Math.round(currentWeather.main.temp_max)}°C<br>
-        Low: ${Math.round(currentWeather.main.temp_min)}°C<br>
-        Wind: ${currentWeather.wind.speed} m/s<br>
+        Highest temperature: ${Math.round(currentWeather.main.temp_max)}°C<br>
+        Lowest temperature: ${Math.round(currentWeather.main.temp_min)}°C<br>
+        Wind speed: ${currentWeather.wind.speed} m/s<br>
         Humidity: ${currentWeather.main.humidity}%<br>
         Rain Probability: ${currentWeather.pop * 100 || 0}%<br>
         Sunrise: ${new Date(weatherData.city.sunrise * 1000).toLocaleTimeString()}<br>
@@ -46,17 +50,19 @@ export function updateWeatherUI(weatherData) {
             ${new Date(hour.dt * 1000).getHours()}:00<br>
             ${Math.round(hour.main.temp)}°C<br>
             ${hour.weather[0].description}
+             <img src="${weatherIcon}" alt="${hour.weather[0].description}" class="weather-icon">
         </div>
     `).join('');
 
     // E) Next 5 Days
     const next5DaysElement = document.getElementById('next-5-days');
-    next5DaysElement.innerHTML = weatherData.list.slice(0, 5).map(day => `
+    next5DaysElement.innerHTML = weatherData.list.slice(0, 6).map(day => `
         <div>
             ${new Date(day.dt * 1000).toDateString()}<br>
             Min: ${Math.round(day.main.temp_min)}°C<br>
             Max: ${Math.round(day.main.temp_max)}°C<br>
             ${day.weather[0].description}
+            <img src="${weatherIcon}" alt="${day.weather[0].description}" class="weather-icon">
         </div>
     `).join('');
 }

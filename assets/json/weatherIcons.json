@@ -1,0 +1,71 @@
+{
+  "Thunderstorm": {
+    "200": { "description": "thunderstorm with light rain", "icon": "../assets/icons/weather-icons/thunderstorm-rain.png" },
+    "201": { "description": "thunderstorm with rain", "icon": "../assets/icons/weather-icons/thunderstorm-rain.png" },
+    "202": { "description": "thunderstorm with heavy rain", "icon": "../assets/icons/weather-icons/thunderstorm-heavy-rain.png" },
+    "210": { "description": "light thunderstorm", "icon": "../assets/icons/weather-icons/thunderstorm.png" },
+    "211": { "description": "thunderstorm", "icon": "../assets/icons/weather-icons/thunderstorm.png" },
+    "212": { "description": "heavy thunderstorm", "icon": "../assets/icons/weather-icons/thunderstorm.png" },
+    "221": { "description": "ragged thunderstorm", "icon": "../assets/icons/weather-icons/thunderstorm.png" },
+    "230": { "description": "thunderstorm with light drizzle", "icon": "../assets/icons/weather-icons/thunderstorm-rain.png" },
+    "231": { "description": "thunderstorm with drizzle", "icon": "../assets/icons/weather-icons/thunderstorm-rain.png" },
+    "232": { "description": "thunderstorm with heavy drizzle", "icon": "../assets/icons/weather-icons/thunderstorm-heavy-rain.png" }
+  },
+  "Drizzle": {
+    "300": { "description": "light intensity drizzle", "icon": "../assets/icons/weather-icons/light-shower-rain.png" },
+    "301": { "description": "drizzle", "icon": "../assets/icons/weather-icons/heavy-rain.png" },
+    "302": { "description": "heavy intensity drizzle", "icon": "../assets/icons/weather-icons/extreme-rain.png" },
+    "310": { "description": "light drizzle rain", "icon": "../assets/icons/weather-icons/light-shower-rain.png" },
+    "311": { "description": "drizzle rain", "icon": "../assets/icons/weather-icons/shower-rain.png" },
+    "312": { "description": "heavy drizzle rain", "icon": "../assets/icons/weather-icons/extreme-rain.png" },
+    "313": { "description": "shower rain and drizzle", "icon": "../assets/icons/weather-icons/shower-rain.png" },
+    "314": { "description": "heavy shower rain and drizzle", "icon": "../assets/icons/weather-icons/extreme-rain.png" },
+    "321": { "description": "shower drizzle", "icon": "../assets/icons/weather-icons/shower-rain.png" }
+  },
+  "Rain": {
+    "500": { "description": "light rain", "icon": "../assets/icons/weather-icons/light-rain.png" },
+    "501": { "description": "moderate rain", "icon": "../assets/icons/weather-icons/moderate-rain.png" },
+    "502": { "description": "heavy intensity rain", "icon": "../assets/icons/weather-icons/heavy-rain.png" },
+    "503": { "description": "very heavy rain", "icon": "../assets/icons/weather-icons/heavy-rain.png" },
+    "504": { "description": "extreme rain", "icon": "../assets/icons/weather-icons/extreme-rain.png" },
+    "511": { "description": "freezing rain", "icon": "../assets/icons/weather-icons/freezing-rain.png" },
+    "520": { "description": "light intensity shower rain", "icon": "../assets/icons/weather-icons/light-shower-rain.png" },
+    "521": { "description": "shower rain", "icon": "../assets/icons/weather-icons/shower-rain.png" },
+    "522": { "description": "heavy intensity shower rain", "icon": "../assets/icons/weather-icons/extreme-rain.png" },
+    "531": { "description": "ragged shower rain", "icon": "../assets/icons/weather-icons/ragged-shower-rain.png" }
+  },
+  "Snow": {
+    "600": { "description": "light snow", "icon":"../assets/icons/weather-icons/light-snow.png" },
+    "601": { "description": "snow", "icon": "../assets/icons/weather-icons/snow.png" },
+    "602": { "description": "heavy snow", "icon": "../assets/icons/weather-icons/heavy-snow.png" },
+    "611": { "description": "sleet", "icon": "../assets/icons/weather-icons/freezing-rain.png" },
+    "612": { "description": "light shower sleet", "icon": "../assets/icons/weather-icons/heavy-snow.png" },
+    "613": { "description": "shower sleet", "icon": "../assets/icons/weather-icons/heavy-snow.png" },
+    "615": { "description": "light rain and snow", "icon": "../assets/icons/weather-icons/rain-snow.png" },
+    "616": { "description": "rain and snow", "icon": "../assets/icons/weather-icons/rain-snow.png" },
+    "620": { "description": "light shower snow", "icon": "../assets/icons/weather-icons/heavy-snow.png" },
+    "621": { "description": "shower snow", "icon": "../assets/icons/weather-icons/heavy-snow.png" },
+    "622": { "description": "heavy shower snow", "icon": "../assets/icons/weather-icons/heavy-snow.png" }
+  },
+  "Clear": {
+    "800": { "description": "clear sky", "icon": "../assets/icons/weather-icons/clear.png" }
+  },
+  "Clouds": {
+    "801": { "description": "few clouds", "icon": "../assets/icons/weather-icons/few-clouds.png" },
+    "802": { "description": "scattered clouds", "icon": "../assets/icons/weather-icons/scattered-clouds.png" },
+    "803": { "description": "broken clouds", "icon": "/assets/icons/weather-icons/broken-clouds.png" },
+    "804": { "description": "overcast clouds", "icon": "../assets/icons/weather-icons/broken-clouds.png" }
+  },
+  "Atmosphere": {
+    "701": { "description": "mist", "icon": "../assets/icons/weather-icons/mist.png" },
+    "711": { "description": "smoke", "icon": "../assets/icons/weather-icons/mist.png" },
+    "721": { "description": "haze", "icon": "../assets/icons/weather-icons/mist.png" },
+    "731": { "description": "sand/ dust whirls", "icon": "../assets/icons/weather-icons/sand-dust-whirls.png" },
+    "741": { "description": "fog", "icon": "../assets/icons/weather-icons/fog.png" },
+    "751": { "description": "sand", "icon": "../assets/icons/weather-icons/mist.png" },
+    "761": { "description": "dust", "icon": "../assets/icons/weather-icons/mist.png" },
+    "762": { "description": "volcanic ash", "icon": "../assets/icons/weather-icons/mist.png" },
+    "771": { "description": "squalls", "icon": "../assets/icons/weather-icons/mist.png" },
+    "781": { "description": "tornado", "icon": "../assets/icons/weather-icons/tornado.png" }
+  }
+}

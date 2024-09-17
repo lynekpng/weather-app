@@ -1,15 +1,30 @@
-body {
-  font-family: 'Arial', sans-serif;
+
+@import url('https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,200..1000;1,200..1000&display=swap');
+html, body {
+  height: 100%;
   margin: 0;
   padding: 0;
-  background: linear-gradient(135deg, #9f8fce 0%, #e0c3fc 100%);
+  font-family: 'nunito','Arial', sans-serif;
   color: white;
+}
+
+body {
+  min-height: 100%;
+  background: linear-gradient(#9f8fce, #ECB2CD) fixed;
+  background-repeat: no-repeat;
+  background-size: cover;
+  background-attachment: fixed;
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
 }
 
+body.dark-mode {
+  background: linear-gradient(#081742, #2d4364) fixed;
+}
+
+/* Header and Search Box */
 header {
   width: 100%;
   padding: 20px;
@@ -20,9 +35,13 @@ header {
 .search-box {
   display: flex;
   align-items: center;
-  background: rgba(255, 255, 255, 0.1);
+  background: rgba(0, 0, 0, 0.1);
   padding: 10px 20px;
   border-radius: 30px;
+  width: calc(100% - 40px);
+  max-width: 600px;
+  margin: 20px auto;
+  position: relative;
 }
 
 .search-box input {
@@ -31,6 +50,7 @@ header {
   color: white;
   outline: none;
   padding: 10px;
+  flex: 1;
 }
 
 .search-box button {
@@ -40,65 +60,158 @@ header {
   margin-left: 10px;
 }
 
+/* Dark Mode Toggle */
+.darkModeDiv {
+  cursor: pointer;
+  caret-color: transparent;
+  position: fixed;
+  right: 25px;
+  top: 25px;
+}
+
+.img-checked {
+  display: none;
+}
+
+body.dark-mode .img-checked {
+  display: inline;
+}
+
+body.dark-mode .img-unchecked {
+  display: none;
+}
+
+/* Main Content Container */
 .main-container {
-  display: grid;
-  gap: 20px;
-  padding: 20px;
-  width: 90%;
-  max-width: 1000px;
-  margin-top: 20px;
-  grid-template-areas:
-      "location-and-date"
-      "current-temperature"
-      "current-stats"
-      "weather-by-hour"
-      "next-5-days";
-}
-
-.location-and-date, .current-temperature, .current-stats, .weather-by-hour, .next-5-days {
-  background: rgba(255, 255, 255, 0.1);
-  border-radius: 20px;
-  padding: 20px;
-}
-
-.current-temperature {
-  font-size: 2rem;
-}
-
-.current-stats, .weather-by-hour, .next-5-days {
-  font-size: 1.2rem;
   display: flex;
-  justify-content: space-around;
+  flex-wrap: wrap;
+  justify-content: center; 
+  align-items: center;   
+  background: rgba(0, 0, 0, 0.1);
+  padding: 10px 20px;
+  border-radius: 30px;
+  margin: 0.5rem;
+}
+.dark-mode .search-box {
+  background: rgba(255, 255, 255, 0.1); 
+}
+
+.dark-mode .main-container {
+  background: rgba(255, 255, 255, 0.1); 
+}
+
+.current-container {
+ display: flex;
+ flex-direction: column;
+  width: fit-content;
   align-items: center;
 }
+/* Location and Date Section */
+.location-and-date {
+  display: flex;
+  flex-direction: column;
+  font-size: 20px;
+  font-weight: 700;
+  margin: 0.5rem;
+  width: 100%;
+  box-sizing: border-box;
+}
 
-.next-5-days div, .weather-by-hour div {
+.location-container {
+  display: flex;
+  flex-direction: column;
+  margin: 1rem;
+  width: 100%;
+}
+
+/* Current Temperature */
+.current-temperature {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
+/* Current Stats Section */
+.current-stats {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 1rem;
+}
+
+/* Weather by Hour */
+.weather-by-hour {
+  display: none;
+  width: 100%;
+  margin: 1rem;
+}
+
+/* Next 5 Days Forecast */
+.next-5-days {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 1rem;
+}
+
+/* Media Queries for Responsiveness */
+@media screen and (min-width: 768px) {
+  .weather-by-hour {
+    display: flex;
+    flex-direction: column;
+  }
+}
+
+@media screen and (min-width: 1000px) {
+  .main-container {
+    width: 980px;
+    margin: 16px auto;
+    font-size: 1rem;
+  }
+
+ .current-container {
+    flex-direction: row; 
+   
+ }
+  .location-and-date {
+    display: flex;
+    flex-direction: row; 
+    justify-content: space-between;  
+    width: 100%;
+  }
+
+  .location-container, .current-stats {
+
+    width: 50%; 
+    box-sizing: border-box;
+  }
+
+.next-5-days, .weather-by-hour{
+ display: flex; 
+ flex-direction: row;
+ justify-content: center;
+}
+}
+
+.next-5-days > * {
+  margin: 0.7rem
+}
+.weather-by-hour > * {
+  margin: 0.7rem;
+}
+
+.current-temperature, .location-and-date {
+  align-self: center;
+  height: 100%;
+  margin: 0;
+  padding: 0;
   display: flex;
   flex-direction: column;
   align-items: center;
-}
-
-footer {
-  margin-top: auto;
-  padding: 20px;
-  background: rgba(255, 255, 255, 0.1);
-  width: 100%;
   text-align: center;
-  border-radius: 20px 20px 0 0;
 }
-
-footer a {
-  color: white;
-  text-decoration: none;
-  margin: 0 10px;
-}
-
-@media (min-width: 600px) {
-  .main-container {
-      grid-template-areas:
-          "location-and-date location-and-date"
-          "current-temperature current-stats"
-          "weather-by-hour weather-by-hour"
-          "next-5-days next-5-days";
-  }
+/* styles.css or any relevant stylesheet */
+.weather-icon {
+  width: 100px; /* Adjust width as needed */
+  height: auto; /* Maintain aspect ratio */
 }

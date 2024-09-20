@@ -8,7 +8,7 @@ A simple and elegant weather application that provides current weather informati
 
 ## Features
 
-- Light/dark mode toggle
+- Light/dark mode toggle (broken, fix coming soon !)
 - Search for weather information by city name
 - Display current temperature, weather condition, and other statistics
 - Show hourly weather forecast
